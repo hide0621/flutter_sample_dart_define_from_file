@@ -1,6 +1,8 @@
 # flutter_sample_dart_define_from_file
 
-A new Flutter project.
+このレポジトリは書籍「Flutter実践開発」第４章４節「dart-define-from-file 環境変数を扱う」の内容に基づくものです。
+
+[Flutter実践開発 - iPhone／Android両対応アプリ開発のテクニック - ](https://gihyo.jp/book/2024/978-4-297-13993-3)
 
 ## Getting Started
 

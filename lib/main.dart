@@ -68,6 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /// Dartのコードから環境変数を参照する
+  ///
+  /// 下記のコードのように、必ずconst変数に代入するか、呼び出し時にconstキーワードを付与する必要がある
+  /// これはfromEnvironment関数が[const factory]で実装されたコンストラクタであるため。
+  /// これを忘れると環境変数が取得できず、デフォルト値が返される。キーが間違っている場合も同様。
+  // const endpoint = String.fromEnvironment('apiEndpoint');
+  // const logLevel = int.fromEnvironment('logLevel');
+  // const enableDebugMenu = bool.fromEnvironment('enableDebugMenu');
+  String endpoint = const String.fromEnvironment('apiEndpoint');
+  int logLevel = const int.fromEnvironment('logLevel');
+  bool enableDebugMenu = const bool.fromEnvironment('enableDebugMenu');
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -105,6 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            /// 環境変数をコードから参照できているかデバッグする
+            Text('endpoint: $endpoint'),
+            Text('logLevel: $logLevel'),
+            Text('enableDebugMenu: $enableDebugMenu'),
             const Text(
               'You have pushed the button this many times:',
             ),

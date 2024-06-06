@@ -4,6 +4,26 @@
 
 [Flutter実践開発 - iPhone／Android両対応アプリ開発のテクニック - ](https://gihyo.jp/book/2024/978-4-297-13993-3)
 
+## コードと設定を分離するまでの手順
+
+手順１：
+
+  - 環境変数をJSON形式で記述する（詳しくはこのレポジトリの**プロジェクトルート**にある`define/env.json`を参照）
+
+手順２：
+
+  - 上記のファイルのパスを`Flutter`コマンドに渡すか、Android Studioで実行する際は「Runボタンの右側にある3点リーダー」→「Edit」→「Run/Debug Configrations」ウィンドウを開く
+
+  - 「Additional run args」に「`--dart-define-from-file=`」に続いて上記のJSONファイルのパスを記述する
+
+  - なお、**この設定はこのレポジトリ（プロジェクト）にのみ適用される**。別のプロジェクトやそれを動かすAndroid Studioには適用されない！
+
+手順３：
+
+  - `main`ファイルにある通り、環境変数をコードから参照するコードを書く
+
+  - 詳しくは`main`ファイルのドキュメントコメントを参照
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
